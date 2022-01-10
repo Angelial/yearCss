@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+}
+.year-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  width: 100%;
+  height: calc(100vh - 150px);
+  color: #fff;
+  z-index: 1;
+  perspective: 800px;
+}
+
+.word {
+  font-size: 200px;
+  font-weight: bold;
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg);
+  background: linear-gradient(to top, #ffb199 0%, #ff0844 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: rotate 3s ease infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+.fireworks-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fireworks {
+  position: fixed;
+  top: 200px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: #ff0844;
+  border: 4px dotted currentColor;
+  transform: scale(0.1);
+}
+.fireworks:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px dotted currentColor;
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.fireworks:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px dotted currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.fireworks:nth-child(1) {
+  left: 10vw;
+  color: #FFE75E;
+  animation: light 3s ease 2.5s infinite
+}
+.fireworks:nth-child(2) {
+  left: 20vw;
+  color: blue;
+  animation: light 3s ease 3.5s infinite
+}
+
+.fireworks:nth-child(3) {
+  left: 30vw;
+  color: #A7E9AF;
+  animation: light 3s ease infinite
+}
+
+.fireworks:nth-child(4) {
+  left: 40vw;
+  color: #FD5E53;
+  animation: light 3s ease 1s infinite
+}
+.fireworks:nth-child(5) {
+  left: 50vw;
+  color: #FE9801;
+  animation: light 3s ease 3s infinite
+}
+.fireworks:nth-child(6) {
+  left: 60vw;
+  color: #BAC7A7;
+  animation: light 3s ease 1.5s infinite
+}
+.fireworks:nth-child(7) {
+  left: 70vw;
+  color: #CCDA46;
+  animation: light 3s ease 0.5s infinite
+}
+.fireworks:nth-child(8) {
+  left: 80vw;
+  color: #F4EEC7;
+  animation: light 3s ease 4s infinite
+}
+.fireworks:nth-child(9) {
+  left: 90vw;
+  color: #F4EEC7;
+  animation: light 3s ease 2s infinite
+}
+
+@keyframes light {
+  0% {
+    top: 100vh;
+    transform: scale(0.1);
+  }
+  70% {
+    transform: scale(0.1);
+  }
+  100% {
+    top: 200px;
+    transform: scale(2.5);
+  }
+}
